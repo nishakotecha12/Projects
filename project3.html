@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bonsai Pricing Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Bonsai</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+
+    <!-- Pricing Toggle -->
+    <section class="pricing-toggle">
+      <span class="toggle-label">Monthly</span>
+      <label class="switch">
+        <input type="checkbox" id="billing-toggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Yearly <span class="discount">(Save 20%)</span></span>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-cards">
+
+      <article class="card">
+        <h2 class="plan-title">Starter</h2>
+        <p class="plan-price" data-monthly="₹199" data-yearly="₹1,999">₹199</p>
+        <p class="plan-description">For freelancers just getting started.</p>
+        <ul class="plan-features">
+          <li>Basic contract & invoice templates</li>
+          <li>Simple time tracking</li>
+          <li>Email support</li>
+        </ul>
+        <button class="btn btn-primary">Get Started</button>
+      </article>
+
+      <article class="card popular">
+        <h2 class="plan-title">Pro</h2>
+        <p class="plan-price" data-monthly="₹399" data-yearly="₹3,999">₹399</p>
+        <p class="plan-description">For freelancers ready to grow.</p>
+        <ul class="plan-features">
+          <li>Everything in Starter</li>
+          <li>Advanced contract customization</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btn-primary">Get Pro</button>
+      </article>
+
+      <article class="card">
+        <h2 class="plan-title">Business</h2>
+        <p class="plan-price" data-monthly="₹799" data-yearly="₹7,999">₹799</p>
+        <p class="plan-description">For agencies and teams.</p>
+        <ul class="plan-features">
+          <li>All Pro features</li>
+          <li>Team management</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <button class="btn btn-primary">Contact Sales</button>
+      </article>
+
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-btn">What is Bonsai?</button>
+        <div class="accordion-content">
+          <p>Bonsai is a freelance management platform to handle contracts, invoices, payments, and more.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn">Can I switch plans anytime?</button>
+        <div class="accordion-content">
+          <p>Yes, you can upgrade or downgrade your plan whenever you want without any penalty.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn">Do you offer refunds?</button>
+        <div class="accordion-content">
+          <p>We offer a 14-day money-back guarantee on all plans.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bonsai Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

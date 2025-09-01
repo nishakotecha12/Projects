@@ -1,0 +1,253 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  background: #fff;
+  color: #4c4d5f;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #00b289;
+  padding: 1rem 0;
+  color: white;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+nav {
+  float: right;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Clear floats */
+.header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Pricing Toggle */
+.pricing-toggle {
+  text-align: center;
+  margin: 2rem 0 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #4c4d5f;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.discount {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #00b289;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 28px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #00b289;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.popular {
+  border: 2px solid #00b289;
+  background: #e4f7f0;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #00b289;
+}
+
+.plan-price {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.plan-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.plan-features {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.plan-features li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.plan-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00b289;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #00b289;
+  color: white;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #008a6b;
+}
+
+/* Accordion */
+.accordion-item {
+  margin-bottom: 1.5rem;
+}
+
+.accordion-btn {
+  background-color: #f8f8f8;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.accordion-btn:focus {
+  outline: none;
+}
+
+.accordion-btn.active + .accordion-content {
+  display: block;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #f8f8f8;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
