@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/path/to/your/favicon.png">
+    <title>Ableton </title>
+
+    <style>
+        .image-container {
+            position: relative; /* This is the anchor for absolutely positioned children */
+            display: block; /* Ensures the container behaves as a block element */
+            width: 70%; /* Adjust as needed */
+            height: 60%;
+            overflow: hidden;
+            margin: 0 auto; /* Centers the container horizontally */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .centered-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red; /* Set text color to red */
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+         .image-card {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+           /* Define a CSS variable for the yellow color */
+         :root {
+            --yellow-color: #fdfc97;
+        }
+
+        /* Container for the entire layout */
+        .main-container {
+            /* Set the height to fill the viewport */
+            height: 90vh;
+            /* Use Flexbox to center content vertically and horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Custom styling for the image cards to give them a white background and shadow */
+        .image-card {
+            background-color:;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container for the right column with the yellow background */
+        .right-column-bg {
+            background-color: var(--yellow-color);
+            min-height: 90vh;
+        }
+
+        /* Styling for the first image to make it overlap */
+        .image-overlap {
+            /* Use a negative margin to pull the image over the boundary */
+            margin-right: -14rem; /* Adjust this value as needed for the desired overlap */
+            position: ;
+            z-index: 12; /* Ensures the image is on top of the other content */
+        }
+
+        /* Styling for the second image to make it small */
+        .image-small {
+            width: 50%; /* Make the image smaller */
+            /* Center the image within its container */
+            margin: 3;
+        }
+
+        /* Custom rotations for the cards to match the original design */
+        .transform-rotate-left {
+         
+        }
+        .transform-rotate-right {
+           
+        }
+           .left-column-bg {
+            background-color: #aaffaa;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .right-column-bg-green {
+            /* Change the background back to the body color */
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .transform-rotate-left {
+            transform: none; /* Removed rotation */
+        }
+        .transform-rotate-right {
+            transform: none; /* Removed rotation */
+        }
+        .image-overlap-left {
+            position: relative;
+            z-index: 2; /* Bring to front */
+        }
+        .image-overlap-right {
+            position: relative;
+            z-index: 2; /* Bring to front */
+            /* This value will control the overlap. Adjust as needed. */
+            margin-top: -100px;
+            margin-left: -50px;
+        }
+        /* Mobile adjustments to prevent image overlap issues */
+        @media (max-width: 768px) {
+            .image-overlap-left {
+                margin-bottom: -50px;
+            }
+            .image-overlap-right {
+                margin-top: -50px;
+                margin-left: 0;
+            }
+
+        /* The CSS for the horizontal line */
+        .separator {
+            border: none;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 20px 0;
+            width: auto;
+            height: auto;
+        }
+          .form-control-custom {
+            background-color: #eee;
+            color: black;
+            border-color: transparent;
+        }
+        .form-control-custom:focus {
+            box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.5);
+            border-color: #3b82f6;
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+        a {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white border-p-2 border border-bottom">
+        <div class="container-fluid mx-5">
+            <a class="navbar-brand" href="#" >
+                <img src="menu1.png">
+                <img src="menu.png">
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Live</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Push</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Move</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Note</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Packs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Help</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                            <i class="bi bi-plus-circle"></i>
+                        </a>
+                        <div class="dropdown-menu p-4 dropdown-large" style="width: 1000px;">
+                            <h2 class="h5 mb-3">More on Ableton.com:</h2>
+                            <div class="row g-2 mb-4">
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Blog</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Ableton for the Classroom</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Ableton for Colleges and Universities</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Certified Training</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">About Ableton</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Jobs</span>
+                                </div>
+                                <div class="col-6 col-sm-3 col-md-auto">
+                                    <span class="d-block text-black text-center rounded p-2 fw-bold">Apprenticeships</span>
+                                </div>
+                            </div>
+                            <h2 class="h5 mb-3">More from Ableton:</h2>
+                            <div class="row g-4">
+                                <div class="col-sm-6 col-md-3">
+                                    <a class="text-decoration-none text-dark" href="#">
+                                        <h6>Loop</h6>
+                                        <p class="small text-muted mb-0">Watch Talks, Performances and Features from Ableton’s Summit for Music Makers.</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <a class="text-decoration-none text-dark" href="#">
+                                        <h6>Learning Music</h6>
+                                        <p class="small text-muted mb-0">Learn the fundamentals of music making right in your browser.</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <a class="text-decoration-none text-dark" href="#">
+                                        <h6>Learning Synths</h6>
+                                        <p class="small text-muted mb-0">Get started with synthesis using a web-based synth and accompanying lessons.</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <a class="text-decoration-none text-dark" href="#">
+                                        <h6>Making Music</h6>
+                                        <p class="small text-muted mb-0">Some tips from 74 Creative Strategies for Electronic Producers.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="#">Try Live for 12 days free</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Log in or register
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Log In</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="col-sm-6 col-md-4 p-3 d-flex">
+        <h6 class="text-warning"><a href="Alkert.html" class="text-decoration-none text-warning">About</a></h6>
+        <h6 class="ms-2"><a href="#" class="text-decoration-none text-dark">Jobs</a></h6>
+        <h6 class="ms-2"><a href="#" class="text-decoration-none text-dark">Apprenticeships</a></h6>
+    </div>
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-center" style="width:100%; height:100%; ">
+            <div class="image-container">
+                <img src="https://ableton-production.imgix.net/about/header.jpg?auto=format&dpr=2.0&fit=crop&fm=jpg&h=1060&ixjsv=1.1.3&q=50&w=683" alt="Header Image">
+                <div class="centered-overlay-text">Ableton</div>
+            </div>
+        </div>
+    </div>
+   <div class=" d- flex container text-center p-5 mt-5  text-start" style="width:55%;heigth:55%;">
+    <h4 class="mb-4  text-dark text-start">
+        We make <a href="#" class="text-primary text-decoration-none">Live</a>,
+        <a href="#" class="text-primary text-decoration-none">Push</a>,
+        <a href="#" class="text-primary text-decoration-none">Note</a>,
+        <a href="#" class="text-primary text-decoration-none">Move</a> and
+        <a href="#" class="text-primary text-decoration-none">Link</a>
+        — unique software and hardware for music creation and performance. With these products, our community of users creates amazing things.</h4>
+    <br>
+
+    <p class=" text-dark text-start">
+        Ableton was founded in 1999 and released the first version of Live in 2001. Our products are used by a community of dedicated musicians, sound designers, and artists from across the world.
+    </p>
+</div>
+</div>
+
+ <div class="container-fluid main-container">
+    <div class="row g-0 w-100 h-100 position-relative">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-end p-0">
+            <div class="image-card transform-rotate-left image-overlap-primary">
+                <img src="https://ableton-production.imgix.net/about/photo-1.jpg?dpr=2.0&fit=crop&h=342&ixjsv=1.1.3&q=50&w=342" alt="A person working with music equipment" class="w-75 d-block">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 right-column-bg d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="image-card transform-rotate-right image-small">
+                <img src="https://ableton-production.imgix.net/about/photo-2.jpg?dpr=2.0&fit=crop&h=205&ixjsv=1.1.3&q=50&w=273" alt="A person walking past bookshelves" class="w-100 d-block">
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+      <div class=" d- flex container text-center p-5 mt-5  text-start " style="width:55%;heigth:55%;">
+    <h4 class="mb-4  text-black text-start">
+    Making music isn’t easy. It takes time, effort, and learning. But when you’re in the flow, it’s incredibly rewarding.
+    </h4>
+    <br>
+
+    <p class=" text-dark  text-start">
+       We feel the same way about making Ableton products. The driving force behind Ableton is our passion for what we make, and the people we make it for.
+    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="embed-responsive embed-responsive-16by9 d-flex text-center justify-content-center p-4 mt-4 ">
+
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-md-8 " >
+      <div class="embed-responsive embed-responsive-20by10">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/t7qnJT1nzrs" style="width:85%;height:500%;"allowfullscreen></iframe>
+      </div>
+  </div>
+     <div class="col-sm-7 col-md-6 d-flex">
+        <h6 class="text">Why Ableton - Juanpe Bolivar</h6>
+    </div>
+      <div class=" d- flex container text-center p-5 mt-5 " style="width:65%;heigth:55%;">
+    <h4 class="mb-4  text-black text-start">
+      We are more than 350 people from 30 different countries divided between our headquarters in Berlin and our offices in Los Angeles and Tokyo
+    </h4>
+    <br>
+    <p class=" text-black  text-start">
+        Most of us are active musicians, producers, and DJs, and many of us use Live and Push every day. We come from a wide range of cultural and professional backgrounds. Some of us have PhDs, some are self-taught, and most of us are somewhere in between. What connects us is the shared belief that each of us has the skills and knowledge to contribute to something big: helping to shape the future of music culture.
+    </p>
+</div>
+    <div class="container-fluid">
+        <div class="row g-0 align-items-center justify-content-center bg-green ">
+            <!-- Left Column: Two images, no background here anymore -->
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center p-3 left-column-bg">
+                <div class="w-75 transform-rotate-left mb-4 image-overlap-left">
+                    <img src="https://ableton-production.imgix.net/about/photo-3.jpg?dpr=2.0&fit=crop&h=205&ixjsv=1.1.3&q=50&w=273" alt="People collaborating at a whiteboard" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="w-50 transform-rotate-right ms-auto">
+                    <img src="https://ableton-production.imgix.net/about/photo-4.jpg?dpr=2.0&fit=crop&h=205&ixjsv=1.1.3&q=50&w=273" alt="Ableton building sign" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+
+            <!-- Right Column: One image with green background -->
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center p-5 right-column-bg-green">
+                <div class="w-75 transform-rotate-left image-overlap-right">
+                    <img src="https://ableton-production.imgix.net/about/photo-5.jpg?dpr=2.0&fit=crop&h=342&ixjsv=1.1.3&q=50&w=342" alt="People in a music studio" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <div>
+             <div class=" d- flex container text-center p-5 mt-5 " style="width:65%;heigth:55%;">
+
+  <h4 class="mb-4  text-black text-start">
+      We believe it takes focus to create truly outstanding instruments. We only work on a few products and we strive to make them great.
+    </h4>
+    <br>
+    <p class=" text-black  text-start">
+Rather than having a one-size-fits-all process, we try to give our people what they need to work their magic and grow. We’ve learned that achieving the best results comes from building teams that are richly diverse, and thus able to explore problems from a wider set of perspectives. We don’t always agree with each other, but opinion and debate are valued and openly encouraged.
+    </p>
+</div>
+<div class="d-flex container p-1 mt-1 ms-0 justify-content-start align-items-start">
+    <img src="https://ableton-production.imgix.net/about/poster-meet-the-makers.jpg?auto=format&dpr=2.0&fit=crop&fm=jpg&ixjsv=1.1.3&q=50&w=683" style="width:70%;height:70%;">
+</div>
+<div
+   <div class=" d- flex container text-center p-5 mt-5 " style="width:65%;heigth:55%;">
+    <h4 class="mb-4  text-black text-start">
+     We’re passionate about what we do, but we’re equally passionate about improving who we are.
+    </h4>
+    <br>
+    <p class=" text-black  text-start">
+      We work hard to foster an environment where people can grow both personally and professionally, and we strive to create a wealth of opportunities to learn from and with each other.
+    </p>
+       <p class=" text-black  text-start">
+    Alongside an internal training program, employees are actively supported in acquiring new knowledge and skills, and coached on applying these in their daily work. In addition, staff-organized development and music salons are a chance to discuss new technologies, production techniques and best practices.
+    </p>
+  <div class="container-wrapper d-flex flex-row justify-content-center align-items-center p-5 mt-5" style="background-color: #d5b3ff; width: 125%; height: auto;">
+    <div class="background-shape shape-one d-flex flex-row ms-1 me-3 justify-content-start align-items-start">
+        <img src="https://ableton-production.imgix.net/about/photo-6-a.jpg?dpr=2.0&fit=crop&h=205&ixjsv=1.1.3&q=50&w=273" alt="Description of first image" class="image-one img-fluid">
+    </div>
+    <div class="background-shape shape-two">
+        <img src="https://ableton-production.imgix.net/about/photo-7.jpg?dpr=2.0&fit=crop&h=342&ixjsv=1.1.3&q=50&w=342" alt="Description of second image" class="image-two img-fluid">
+    </div>
+</div>
+
+</div>
+<div class=" d- flex container text-center p-5 mt-5 " style="width:65%;heigth:55%;">
+ <h4 class="mb-4  text-black text-start">
+    We want our employees to love it here. Since we’re looking for exceptional talent from around the world, we will do everything we can to make your transition as easy as possible.
+    </h4>
+    <br>
+    <p class=" text-black  text-start">
+If you're joining us in Berlin, we'll help with relocation and paperwork. We’ll even provide you with free German or English lessons. Plus, working in Germany means you can expect comprehensive health insurance for you and your family, as well as generous maternity and paternity leave. Office hours are flexible, but it’s not all work; we have several company and team outings throughout the year as well as a variety of fun, informal small-group activities.
+    </p>
+<div class="container-wrapper d-flex flex-row justify-content-center align-items-center p-5 mt-5" style="background-color: #b1c5ff; " "width:700%; height:auto;">
+    <div class="img-container me-3">
+        <img src="https://ableton-production.imgix.net/about/photo-8.jpg?crop=right&dpr=2.0&fit=crop&h=410&ixjsv=1.1.3&q=50&w=683" class="img-fluid" alt="A relevant description of the image" style="width: 900% ;border-right: 1px white;">
+    </div>
+    <div class="p-container">
+        <h5 class="text-start">
+            We’re really proud of the work we’ve done so far. But there’s so much more to come. If you’d like to be a part of it, please join us.<br> <br> <a href="#" class="text-decoration-none">See Latest Jobs ></a>
+        </h5>
+    </div>
+</div>
+<div>
+</div>
+</div>
+</div>
+</div>
+  <hr class="separator">
+</div>
+</div>
+</div>
+   <div class="container my-5">
+        <!-- Ableton Logo -->
+        <h1 class="mb-4">Ableton</h1>
+
+        <!-- First Row of Columns -->
+        <div class="row mb-5">
+            <!-- First Column: Main Links -->
+            <div class="col-md-4 d-flex flex-column">
+                <a class="text-decoration-none text-dark mb-2" href="#">Register Live, Push or Move > </a>
+                <a class="text-decoration-none text-dark mb-2" href="#">About Ableton > </a>
+                <a class="text-decoration-none text-dark mb-2" href="#"> Jobs > </a>
+                <div class="social-icons mt-3">
+                    <img src="facebook.png" style="width:1%;height: 1%;" alt="Facebook icon">
+                    <img src="https://placehold.co/32x32/000000/ffffff?text=X" alt="X icon">
+                    <img src="https://placehold.co/32x32/E4405F/ffffff?text=I" alt="Instagram icon">
+                    <img src="https://placehold.co/32x32/FF0000/ffffff?text=Y" alt="YouTube icon">
+                    <img src="https://placehold.co/32x32/000000/ffffff?text=T" alt="Tiktok icon">
+                    <img src="https://placehold.co/32x32/5865F2/ffffff?text=D" alt="Discord icon">
+                </div>
+            </div>
+
+            <!-- Second Column: Education Links -->
+            <div class="col-md-4 d-flex flex-column">
+                <p class="fw-bold text-uppercase mb-1">Education</p>
+                <a class="text-decoration-none text-dark mb-2" href="#">Offers for students and teachers > </a>
+                <a class="text-decoration-none text-dark mb-2" href="#">Ableton for the Classroom ></a>
+                <a class="text-decoration-none text-dark mb-2" href="#"> Ableton for Colleges and Universities ></a>
+            </div>
+
+            <!-- Third Column: Newsletter Signup -->
+            <div class="col-md-4 d-flex flex-column">
+                <h6 class="fw-bold">Sign up to our newsletter</h6>
+                <p class="text-muted small">Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more.</p>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" class="form-control form-control-lg form-control-custom rounded-start-3 border-0" aria-label="Email address">
+                    <button class="btn btn-primary btn-lg rounded-end-3" type="button">
+                        Sign up
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Second Row of Columns -->
+        <div class="row my-5">
+            <!-- First Column: Community Links -->
+            <div class="col-md-6 d-flex flex-column">
+                <p class="fw-bold text-uppercase mb-1">Community</p>
+                <a class="text-decoration-none text-dark mb-2" href="#">Find Ableton User Groups > </a>
+                <a class="text-decoration-none text-dark mb-2" href="#">Find Certified Training ></a>
+                <a class="text-decoration-none text-dark mb-2" href="#">Become a Certified Trainer ></a>
+            </div>
+
+            <!-- Second Column: Language and Location -->
+            <div class="col-md-6 d-flex flex-column">
+                <p class="fw-bold text-uppercase mb-1">Language and Location</p>
+                <div class="d-flex">
+                    <select class="form-select form-select-sm me-2">
+                        <option selected>English</option>
+                         <option selected>Gujarati</option>
+                          <option selected>Marathi</option>
+                           <option selected>Spanish</option>
+                            <option selected>France</option>
+
+                    </select>
+                    <select class="form-select form-select-sm">
+                        <option selected>India</option>
+                           <option selected>England</option>
+                              <option selected>U.K</option>
+                                 <option selected>U.S.A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Row: Contact Info -->
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-between align-items-center flex-wrap">
+                <small class="text-muted">
+                    <a href="#" class="text-decoration-none text-dark me-2">Contact Us</a>
+                    <a href="#" class="text-decoration-none text-dark me-2">Press Resources</a>
+                    <a href="#" class="text-decoration-none text-dark me-2">Legal Info</a>
+                    <a href="#" class="text-decoration-none text-dark me-2">Corporate Information</a>
+                    <a href="#" class="text-decoration-none text-dark me-2">Privacy Policy</a>
+                    <a href="#" class="text-decoration-none text-dark me-2">Cookie Settings</a>
+                    <a href="#" class="text-decoration-none text-dark">Imprint</a>
+                </small>
+                <small class="text-muted">Made in Berlin <img src="menu.png" alt="Berlin icon"></small>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const dropdownToggle = document.querySelector('.nav-item.dropdown .nav-link');
+        const icon = dropdownToggle.querySelector('.bi');
+
+        dropdownToggle.addEventListener('show.bs.dropdown', function () {
+            icon.classList.remove('bi-plus-circle');
+            icon.classList.add('bi-dash-circle');
+        });
+
+        dropdownToggle.addEventListener('hidden.bs.dropdown', function () {
+            icon.classList.remove('bi-dash-circle');
+            icon.classList.add('bi-plus-circle');
+        });
+    </script>
+</body>
+</html> 
