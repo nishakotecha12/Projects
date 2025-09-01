@@ -1,0 +1,419 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4cm; /* Approximate header height */
+  z-index: 1000;
+  flex-wrap: nowrap;
+}
+
+/* Logo and Title */
+.topbar__logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.topbar__logo {
+  width: 100px;
+  height: auto;
+}
+
+.header-title {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Buttons Container - Align buttons to the right */
+.topbar__buttons {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  margin-left: auto; /* Push buttons to the right */
+}
+
+/* General Button Styles */
+.topbar__button {
+  padding: 12px 20px; /* Same size as typical h2 button */
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button 1: Sign In */
+.topbar__button:nth-child(1) {
+  background-color: white; /* Blue background */
+  color: black;
+}
+
+.topbar__button:nth-child(1):hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #white; /* Add blue border on hover */
+}
+
+/* Button 2: Submit Request */
+.topbar__button:nth-child(2) {
+  background-color: #333; /* Same background as header */
+  color: white;
+}
+
+.topbar__button:nth-child(2):hover {
+  background-color: blue; /* Blue background on hover */
+  color: black;
+  border: 1px solid blue; /* Blue border on hover */
+}
+
+/* Button 3: Search */
+.topbar__button:nth-child(3) {
+  background-color: skyblue;
+  color: black;
+}
+
+.topbar__button:nth-child(3):hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #28a745; /* Green border on hover */
+}
+
+.search-icon {
+  display: none; /* Hidden by default */
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hamburger Icon (Three Lines) */
+.hamburger-icon {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger-icon div {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Show search icon and hamburger icon for smaller screens */
+@media (max-width: 768px) {
+  .search-icon {
+    display: block; /* Show search icon on small screens */
+  }
+
+  .topbar__buttons {
+    display: none; /* Hide buttons on small screens */
+    flex-direction: column; /* Stack buttons vertically */
+    width: 100%; /* Full width */
+    position: absolute;
+    top: 100%; /* Position below header */
+    background-color: #333;
+    z-index: 1000;
+    gap: 15px;
+  }
+
+  .topbar__buttons.active {
+    display: flex; /* Show buttons when active */
+  }
+
+  .hamburger-icon {
+    display: flex; /* Show hamburger icon */
+  }
+}
+
+/* Search Box Styles (Hidden by default) */
+.search-box {
+  display: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/* Show search box when icon is clicked (mobile view) */
+.search-box.active {
+  display: block;
+  position: absolute;
+  right: 20px; /* Align to the right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Subheader Section */
+.subheader {
+  height: 9cm; /* Approx 9 cm */
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 4cm; /* Adjust to create space below the header */
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.subheader h1 {
+  font-size: 56px; /* Larger font size for the heading */
+  color: #333;
+  margin-bottom: 20px; /* Space between heading and search box */
+}
+
+/* Search Box Section */
+.search-box-section {
+  width: 50%;
+  text-align: center;
+}
+
+.search-box {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* For search box on small screens */
+@media (max-width: 768px) {
+  .search-box {
+    width: 80%;
+  }
+
+  /* Search icon visible for smaller screens */
+  .topbar__buttons {
+    display: none;
+  }
+
+  .topbar__search-icon {
+    display: block;
+  }
+}
+
+/* Category List Section */
+.category-list {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent items from wrapping */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between logo and category content */
+  margin-top: 20px; /* Reduced the margin to bring categories closer to the subheader */
+}
+
+.category-list__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Align items to the left */
+  gap: 30px; /* Space between category items */
+  flex-grow: 2; /* Ensure the content takes up the remaining space */
+}
+
+/* Category List Item (Each Category Box) */
+.category-list-item {
+  display: flex; /* Align icon and content in a row */
+  align-items: center; /* Vertically center the content */
+  gap: 15px; /* Space between icon and content */
+  width: 20%; /* Reduced width for better spacing */
+  margin-bottom: 10px; /* Spacing between the categories */
+  background-color: #fff;
+  padding: 15px;
+  border:none;
+  box-shadow: none;
+  text-align: left; /* Align text left for content */
+  background-color: transparent;
+}
+
+/* Category List Logo (Icon) */
+.category-list-icon {
+  width: 90px; /* Icon size */
+  height: 90px;
+  display: flex;
+  justify-content: center; /* Center icon inside the box */
+  align-items: center;
+}
+
+/* Category List Icon SVG */
+.category-list-svg-icon {
+  width: 100%; /* Make sure the icon takes up the full container */
+  height: 100%;
+}
+
+/* Category Content */
+.category-list-item__content {
+  flex-grow: 1; /* Ensure the content takes up the remaining space */
+}
+
+.category-list-item__title {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.category-list-item__desc {
+  font-size: 18px;
+  color: #666;
+}
+
+.category-list-item__link {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.category-list-item__link:hover {
+  text-decoration: underline;
+}
+
+/* Large screen (min-width 1024px) */
+@media (min-width: 1024px) {
+  .category-list-item {
+    width: 48%; /* Adjust to 2 items per row on large screens */
+    margin-bottom: 20px;
+  }
+}
+
+/* Medium to Small screen (max-width 1023px) */
+@media (max-width: 1023px) {
+  .category-list-item {
+    width: 48%; /* Adjust to 2 items per row on medium screens */
+    margin-bottom: 20px;
+  }
+}
+
+/* For smaller screens (max-width 768px) */
+@media (max-width: 768px) {
+  .category-list__items {
+    display: block; /* Stack items vertically */
+  }
+
+  .category-list-item {
+    width: 80%; /* Make each item take full width on smaller screens */
+    margin: 0 auto 40px; /* Center the item and add spacing between items */
+  }
+}
+
+/* Footer Styling */
+footer {
+  background-color: #000; /* Set the background color to black */
+  color: white;
+  padding: 40px 10%;  /* Add padding to space out the content and keep it centered */
+  margin-top: 50px;
+}
+
+/* Footer Inner Container */
+.footer__inner {
+  display: flex;               /* Align columns horizontally */
+  justify-content: space-between;  /* Distribute columns evenly */
+  align-items: flex-start;     /* Align items to the top */
+  flex-wrap: wrap;             /* Allow wrapping on smaller screens */
+  max-width: 1000px;           /* Limit max width to prevent it from stretching too much */
+  margin: 0 auto;              /* Center the content */
+}
+
+.footer-column {
+  flex: 1;                     /* Each column takes equal width */
+  margin-right: 40px;          /* Space between columns */
+}
+
+.footer-column:last-child {
+  margin-right: 0;             /* Remove margin from last column */
+}
+
+/* Footer Title */
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Links Styling */
+footer a {
+  color: #f4f4f4;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Logo Styling */
+footer .abstract-logo-footer {
+  width: 100px;
+  margin: 20px auto;
+}
+
+/* Copyright Section Styling */
+footer .footer-column-copyright {
+  text-align: left; 
+  margin-top: 20px;
+  width: 250px; 
+  margin-left: auto; 
+  margin-right: 0;
+  position: relative; 
+  left: 180px;
+}
+.help-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  padding: 10px 20px; /* Adjust padding to make it bigger */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Keep it above other content */
+  transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: deepskyblue;
+}
+
+.help-text {
+  display: flex;
+  align-items: center;
+}
+
+.help-question {
+  margin-left: 5px; /* Space between the word "HELP" and the question mark */
+}
