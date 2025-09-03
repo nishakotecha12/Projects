@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Agency Footer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .footer-link {
+            transition: color 0.2s ease-in-out;
+        }
+        .footer-link:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-white">
+    <!-- Main content area above footer for context -->
+    <main class="h-screen flex items-center justify-center p-8">
+        <div class="max-w-4xl text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight">We collaborate with ambitious brands and people. Let's build.</h1>
+            <a href="mailto:biz@basicagency.com" class="text-xl md:text-2xl font-medium text-white underline mt-4 block">biz@basicagency.com</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#191919] text-white py-16 px-8 md:px-16 lg:px-24">
+        <div class="container mx-auto">
+            <!-- Top section with logo/title and main collaboration text -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 space-y-8 md:space-y-0">
+                <div class="text-3xl font-bold">B/D®</div>
+                <div class="text-2xl md:text-4xl lg:text-5xl font-semibold max-w-2xl text-center md:text-left">
+                    We collaborate with ambitious brands and people. Let's build.
+                </div>
+            </div>
+
+            <!-- Main footer links and contact info -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-[#CCCCCC]">
+                <!-- Stay in the Know section -->
+                <div>
+                    <h3 class="flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-4">
+                        <span class="w-2 h-2 rounded-full bg-white mr-2"></span>
+                        Stay in the know
+                    </h3>
+                    <div class="flex items-center border-b border-[#CCCCCC] pb-2">
+                        <input type="email" placeholder="Email Address" class="w-full bg-transparent outline-none placeholder-[#CCCCCC] text-white" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Social links section -->
+                <div>
+                    <h3 class="flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-4">
+                        <span class="w-2 h-2 rounded-full bg-white mr-2"></span>
+                        Social
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Instagram</a></li>
+                        <li><a href="#" class="footer-link">Twitter</a></li>
+                        <li><a href="#" class="footer-link">LinkedIn</a></li>
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                    </ul>
+                </div>
+
+                <!-- Initiatives links section -->
+                <div>
+                    <h3 class="flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-4">
+                        <span class="w-2 h-2 rounded-full bg-white mr-2"></span>
+                        Initiatives
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Applied</a></li>
+                        <li><a href="#" class="footer-link">Brandbeats</a></li>
+                        <li><a href="#" class="footer-link">Moves</a></li>
+                        <li><a href="#" class="footer-link">B®/Good</a></li>
+                    </ul>
+                </div>
+
+                <!-- Offices section -->
+                <div>
+                    <h3 class="flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-4">
+                        <span class="w-2 h-2 rounded-full bg-white mr-2"></span>
+                        Offices
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>San Diego - CA</li>
+                        <li>New York - NY</li>
+                        <li>Bay Area - CA</li>
+                        <li>St. Louis - MO</li>
+                        <li>Amsterdam - NL</li>
+                        <li>London - EN</li>
+                        <li>Berlin - GE</li>
+                        <li>Argentina - AR</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom copyright and legal section -->
+        <div class="container mx-auto border-t border-[#333] mt-16 pt-8 text-xs flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[#999999]">
+            <div class="flex items-center space-x-2">
+                <div class="bg-white rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-black" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.4 7.6a.75.75 0 011.06 0L10 11.09l3.54-3.49a.75.75 0 011.06 1.06l-4 4a.75.75 0 01-1.06 0l-4-4a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <span>BASIC/DEPT® INC. © 2024</span>
+            </div>
+            <div class="text-center md:text-left">EASY TO UNDERSTAND. IMPOSSIBLE TO IGNORE.™</div>
+            <div class="space-x-4">
+                <a href="#" class="footer-link">TERMS</a>
+                <a href="#" class="footer-link">PRIVACY POLICY</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
